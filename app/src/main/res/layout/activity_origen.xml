@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.addmin.paquete.ui.maps.OrigenActivity"
+    android:background="@color/background">
+
+    <TextView
+        android:text="Datos de origen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/cabecera"
+        android:textAppearance="@android:style/TextAppearance.Widget.PopupMenu.Large"
+        android:textAlignment="center"
+        android:background="@color/colorAccent"
+        android:gravity="center_horizontal"
+        android:textColor="@color/background"
+        android:layout_marginBottom="20dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titulo"
+        android:background="@color/accent"
+        android:weightSum="1"
+        android:gravity="center_horizontal"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titulo_inicio"
+            android:text="Define punto de recooleccion"
+            android:textSize="20sp"
+            android:textColor="@color/background"
+            android:textColorHighlight="@color/cast_expanded_controller_background_color"
+            android:textColorHint="@color/cast_expanded_controller_background_color"
+            android:textColorLink="@color/cast_expanded_controller_background_color" />
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titulo_inicio"
+            android:id="@+id/mapa_toggle"
+            android:checked="true"
+            android:textOff="."
+            android:textOn="."
+            android:background="@drawable/toggle"
+            android:textColor="@color/cast_expanded_controller_ad_container_white_stripe_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapa_layout">
+
+        <fragment
+            android:id="@+id/mapa"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mapa_layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="No es una direccion valida"
+                android:layout_width="wrap_content"
+                android:id="@+id/error_dir"
+                android:textAlignment="center"
+                android:textStyle="normal|bold"
+                android:textColor="#FFFF070B"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textAllCaps="false"
+                android:layout_gravity="center_horizontal"
+                android:visibility="invisible"
+                android:elevation="1dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/layout1"
+                android:layout_below="@id/cabecera"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Calle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cabecera"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/calle_lb"
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:background="@drawable/edit_txt"
+                    android:layout_below="@+id/cabecera"
+                    android:layout_toRightOf="@+id/textView3"
+                    android:layout_toEndOf="@+id/textView3"
+                    android:id="@+id/calle_txt"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/layout2"
+                android:layout_below="@id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Entre Calle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/calle1_lb" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/calle1_txt"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:background="@drawable/edit_txt"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:text="Y Calle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/calle2_lbl" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/calle2_txt"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:background="@drawable/edit_txt"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_below="@id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/layout3">
+
+                <TextView
+                    android:text="Num.exterior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/num_ext_lb" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/num_ext_txt"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:background="@drawable/edit_txt"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:text="Num. Interior"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/num_int_lb" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/num_int_txt"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:background="@drawable/edit_txt"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_below="@id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/layout4">
+
+                <TextView
+                    android:text="Codigo postal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cp_lbl" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress"
+                    android:ems="10"
+                    android:id="@+id/cp_txt"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:background="@drawable/edit_txt"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_below="@id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/layout5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:text="Estado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/estado_lb" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/estado_txt"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="Ciudad"
+                    android:layout_width="68dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ciudad_lb" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ciudad_txt"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_below="@id/layout5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/layout6">
+                <TextView
+                    android:text="Colonia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/colonia_lb" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/colonia_txt"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:text="Delegacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/delegacion_lb" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/delegacion_txt"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_below="@id/layout6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/layout7">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:ems="10"
+                    android:id="@+id/referencia_txt"
+                    android:hint="Referencia"
+                    android:layout_weight="1"
+                    android:textSize="18sp"
+                    android:layout_marginBottom="5dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/edit_txt" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/fab"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="guardar_datos"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_aceptar"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp" />
+
+                <CheckBox
+                    android:text="Recordar datos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/preferencias"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

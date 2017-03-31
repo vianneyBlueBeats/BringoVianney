@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fe5200</color>
+    <color name="colorPrimaryDark">#fe5200</color>
+    <color name="colorAccent">#3cbfaf</color>
+    <color name="white">#ffffff</color>
+    <color name="iron">#CCCCCC</color>
+    <color name="primary">#da5252</color>
+    <color name="accent">#fdb98f</color>
+    <color name="ripple">#FD98A2</color>
+    <color name="tertiary">#455561</color>
+    <color name="background">#ffffff</color>
+    <color name="textColorPrimary">#323232</color>
+    <color name="textColorSecondary">#434343</color>
+    <color name="transparent_actionbar_background">#24000000</color>
+    <!-- MINI FAB -->
+    <color name="colorNormalMini">#00B0FF</color>
+    <color name="colorPressedMini">#40C4FF</color>
+    <color name="colorRippleMini">#e1f5fe</color>
+    <!-- BACKGROUND DETAIL -->
+    <color name="saludColor">#41AB97</color>
+    <color name="finanzasColor">#FEC246</color>
+    <color name="espiritualColor">#72C68B</color>
+    <color name="profesionalColor">#EC6B56</color>
+    <color name="materialColor">#462445</color>
+
+</resources>
